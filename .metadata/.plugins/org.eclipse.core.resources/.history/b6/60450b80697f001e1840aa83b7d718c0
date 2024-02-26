@@ -1,0 +1,47 @@
+package quiz;
+
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.IOException;
+
+public class Main{
+    public static void main(String[] args){
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        try{
+        String str_T = br.readLine();
+        int T = Integer.parseInt(str_T);
+        
+        while(!(T < 1000000)){
+            str_T = br.readLine();
+            T = Integer.parseInt(str_T);
+        }
+        
+        int[] A = new int[T];
+        int[] B = new int[T];
+        
+        int i = 0;
+        
+        while(i< T){
+            String[] Arr = new String[2];
+            Arr = br.readLine().split(" ");
+            A[i] = Integer.parseInt(Arr[0]);
+            B[i] = Integer.parseInt(Arr[1]);
+            bw.write((A[i]+B[i])+"\n");
+            i++;
+        }
+        
+        bw.flush();
+        bw.close();
+        }
+        catch(NumberFormatException ex){
+            ex.printStackTrace();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+}

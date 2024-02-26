@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;gitstudy/깃 사용법&apos; to &apos;깃 사용법.txt&apos;" description="Rename resource &apos;깃 사용법&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="깃 사용법" name="깃 사용법.txt" stamp="1699835586171" updateReferences="true"/>&#x0A;<refactoring accessors="true" comment="Delete element from project &apos;gitstudy&apos;&#x0D;&#x0A;- Original project: &apos;gitstudy&apos;&#x0D;&#x0A;- Original element: &apos;fruit.grape.java&apos;" description="Delete element" element1="/src&lt;fruit{grape.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1699843461193" subPackages="false" version="1.0"/>
+</session>

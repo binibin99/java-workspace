@@ -1,0 +1,43 @@
+package quiz;
+
+import java.util.Random;
+
+public class B14_RandomScores {
+	
+	/*
+	 	1. 100개의 랜덤 점수를 생성한다 (0 ~ 20000)
+	 	
+	 	2. 해당 점수들을 한 줄에 5개씩 보기좋게 출력한다
+	 	
+	 	3. 모든 점수들의 평균을 출력한다 (소수 셋째 자리에서 반올림)
+	 	
+	 	4. 가장 높은 점수와 가장 낮은 점수를 출력한다
+	 */
+	
+	public static void main(String[] args) {
+		Random ran = new Random();
+		
+		int[] num = new int[299];
+		
+		
+		for (int j = 0; j < 60 ; ++j) {
+			System.out.println("");
+			for (int i = 0; i < 5 ; ++i) {
+				System.out.print((int)(Math.random() * 20001) + "\t");
+				int avg = (j + i) % 300; 
+				System.out.println(avg);
+				
+				
+				
+			
+					 
+				
+				}
+				
+			}
+		}
+		
+		
+	}
+
+

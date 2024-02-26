@@ -1,0 +1,46 @@
+package quiz;
+
+import java.util.Scanner;
+
+public class B06_checkDigit {
+
+	/*
+	 * 사용자가 숫자를 입력하면 해당 숫자가 몇 자리 숫자인지 알려주는 프로그램을 만들어보세요
+	 */
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("숫자를 입력해주세요 > ");
+		int num = sc.nextInt();
+
+		boolean minus = num < 0;
+		num = Math.abs(num);
+
+		for (int i = 0, count = 0; i <= num; ++i) {
+			if (i >= 0) {
+				if (minus) {
+					System.out.printf("%-d ", i);
+				} else {
+					System.out.print(i + " ");
+				}
+				if (++count / 10 == 0) {
+					System.out.println();
+
+					// if (num < 10) {
+					// System.out.println("1자리 숫자 입니다. ");
+					// } else if (num < 100) {
+					// System.out.println("2자리 숫자 입니다. ");
+					// } else if (num < 1000) {
+					// System.out.println("3자리 숫자 입니다. ");
+					// } else if (num < 10000) {
+					// System.out.println("4자리 숫자 입니다. ");
+					// } else if (num < 100000) {
+					// System.out.println("5자리 숫자 입니다. ");
+					// }
+
+				}
+			}
+		}
+	}
+}

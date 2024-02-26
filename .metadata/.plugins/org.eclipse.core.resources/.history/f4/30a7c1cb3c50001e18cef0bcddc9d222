@@ -1,0 +1,21 @@
+package quiz;
+
+public class B06_ForQuiz1 {
+	
+	/*
+ 		1. 1000부터 2000사이의 8의 배수를 모두 출력해보세요.
+ 		
+ 		2. 100부터 300까지의 총합을 구해보세요
+ 		
+ 		3. 1000부터 2000까지의 10의 배수를 한 줄에 5개씩 출력해보세요
+	 
+	 */
+
+	public static void main(String[] args) {
+		
+		for (int i = 8; i < 2000; ++8) {
+		System.out.println(++i + "번");
+	}
+		
+	}
+}

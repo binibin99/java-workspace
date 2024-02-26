@@ -1,0 +1,23 @@
+package quiz;
+
+public class B10_GuGudan2 {
+
+	// for문으로 출력했던 구구단 2개를 while문으로 출력해보세요
+
+	public static void main(String[] args) {
+		int dan = 2;
+		int gop = 1;
+
+		while (dan < 10) {
+			System.out.printf("%d단\t ",dan);
+			dan++;
+		while (gop < 10) {
+			System.out.printf("\n%dx%d = %d\n",dan,gop,dan*gop);
+			gop++;
+		}
+			
+		}
+
+	}
+
+}

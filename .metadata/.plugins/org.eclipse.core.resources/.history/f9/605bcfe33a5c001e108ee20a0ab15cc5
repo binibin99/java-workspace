@@ -1,0 +1,27 @@
+package myobj.Tonggame;
+
+public class TongazQuiz {
+	
+	public static void main(String[] args) {
+
+		Tongaz[] tong = new Tongaz[20];
+
+		for (int i = 0; i < tong.length; ++i) {
+			tong[i] = new Tongaz();
+		}
+	}
+}
+
+
+
+class Tongaz {
+	// 생성된 모든 벽에서 동일할 값
+	static int failinsert = 4;
+	static int insertMAX = 20;
+
+	// 각 벽마다 다를 값
+	int fail;
+	int insert;
+	int count;
+}
+

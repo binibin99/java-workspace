@@ -1,0 +1,103 @@
+package quiz;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class B14_lotto_bonus {
+
+	/*
+	 * 1. 랜덤으로 로또 당첨 번호를 생성해보세요 (1 ~ 45의 중복 없는 랜덤 숫자 7개, 마지막 번호는 보너스 번호)
+	 * 
+	 * [1] 1 ~ 45의 숫자를 뽑는다 [2] 예전에 뽑은 숫자가 있다면 같은 숫자가 있는지 검사한다 [3] 중복이 있다고 판단되면 다시
+	 * 뽑는다
+	 * 
+	 * 2. 1등에 당첨 될 때까지 로또 번호를 자동으로 계속 생성하여 몇 번 만에 당첨되었는지 출력해보세요 (자동 번호는 1 ~ 45의 중복
+	 * 없는 랜덤 숫자 6개)
+	 * 
+	 * 3. 1등에 당첨 될 때까지 뽑는동안 2등에 당첨되는 번호들이 있으면 출력해주세요
+	 */
+	public static void main(String[] args) {
+
+		int[] winNums = new int[7];
+		int playCnt = 0;
+		
+		int i = 0;
+		int len = winNums.length;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("입력횟수를 입력해주세요 : ");
+		int sc25 = sc.nextInt();
+		
+		while (i < len) {
+			winNums[i] = (int) (Math.random() * 45 + 1);
+			
+			int j = 0;
+			boolean duplicate = false;
+			while (j < i) {
+				if (winNums[j] == winNums[i]) {
+					duplicate = true;
+					break;
+				}
+				++j;
+			}
+			if (!duplicate) {
+				++i;
+			}
+		}
+		for (i = 0; i < len; ++i) {
+			System.out.printf("winNums[%d]: %d\n", i, winNums[i]);
+		}
+		
+		while (playCnt != sc25) {
+			
+			int[] userNums = new int[6];
+			i = 0;
+			len = userNums.length;
+			while (i < len) {
+				userNums[i] = (int)(Math.random() * 45 + 1);
+
+				int j = 0;
+				boolean duplicate = false;
+				while (j < i) {
+					if (userNums[j] == userNums[i]) {
+						duplicate = true;
+						break;
+					}
+					++j;
+				}
+				if (!duplicate) {
+					++i;
+				}
+			}
+			++playCnt;
+			
+			boolean hasBonusNum = false;
+			int winCount = 0;
+			
+			for (int userIndex = 0; userIndex < userNums.length; ++userIndex) {
+				for (int winIndex = 0; winIndex < winNums.length; ++winIndex) {
+					if (userNums[userIndex] == winNums[winIndex]) {
+						if (winIndex == 6) {
+							hasBonusNum = true;
+						}
+						++winCount;
+					}
+				}
+			}
+		
+			if (winCount == 6) {
+				System.out.printf("%s vs %s\n", 
+							Arrays.toString(winNums),Arrays.toString(userNums));
+				
+				if (hasBonusNum) {
+					System.out.println("2등입니다!(" + playCnt + "회)");
+				} else {
+					System.out.println(playCnt + "회 만에 1등입니다!");
+					break;
+				}
+			}
+		}
+		
+		System.out.println("프로그램을 종료합니다...");
+	}
+
+}
